@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:form/utlis/global_Constant.dart';
+import 'package:form/widget/custom_form_field.dart';
+import 'package:form/utlis/input_validators.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.title});
@@ -18,45 +19,32 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SizedBox(
+            const SizedBox(
                 height: 50,
                 child: Text("signUp ")),
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      label: Text("name"),
-                    ),
-              
-              
-                  ),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      label: Text("email"),
-                    ),
-              
-              
-                  ),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      label: Text("password"),
-                    ),
-              
-              
-                  ),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      label: Text("telephone"),
-                    ),
+                 CustomFormField(
+                   hint: "name",
+                   validator: (value) {
+                     if(value!.isNotEmpty && value!.isNameValid){
+                       return "enter a valid name";
+                     }
+                   },
+                   inputFormater: GlobalConstant.inputFormaterNameField,
+                 ),
+                 CustomFormField(
+                   hint: "email",
+                   inputFormater: GlobalConstant.inputFormaterEmailField,
+                   validator: (value) {
+                     if(value!.isNotEmpty && value!.isEmailValid){
+                       return "enter a valid email";
+                     }
+                   },
+                 ),
 
-              
-                  ),
                 ],
               ),
             ),
