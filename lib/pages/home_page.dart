@@ -24,8 +24,9 @@ class _HomePageState extends State<HomePage> {
                 child: Text("signUp ")),
             Expanded(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                // mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  const SizedBox(height: 20,),
                  CustomFormField(
                    hint: "name",
                    validator: (value) {
@@ -35,6 +36,7 @@ class _HomePageState extends State<HomePage> {
                    },
                    inputFormater: GlobalConstant.inputFormaterNameField,
                  ),
+                 const SizedBox(height: 20,),
                  CustomFormField(
                    hint: "email",
                    inputFormater: GlobalConstant.inputFormaterEmailField,
@@ -44,7 +46,16 @@ class _HomePageState extends State<HomePage> {
                      }
                    },
                  ),
-
+                const SizedBox(height: 20,),
+                CustomFormField(
+                  hint: "telephone",
+                  inputFormater: GlobalConstant.inputFormaterPhoneField,
+                  validator: (value) {
+                    if(value!.isNotEmpty && value!.isTelephoneValid){
+                      return "enter a valid telephone";
+                    }
+                  },
+                ),
                 ],
               ),
             ),
