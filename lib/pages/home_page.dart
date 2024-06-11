@@ -25,49 +25,51 @@ class _HomePageState extends State<HomePage> {
               Text("signUp ",),
               const SizedBox(height: 50,),
               Expanded(
-                child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    const SizedBox(height: 20,),
-                   CustomFormField(
-                     hint: "name",
-                     validator: (value) {
-                       if(value!.isNotEmpty && value!.isNameValid){
-                         return "enter a valid name";
-                       }
-                     },
-                     inputFormater: GlobalConstant.inputFormaterNameField,
-                   ),
-                   const SizedBox(height: 20,),
-                   CustomFormField(
-                     hint: "email",
-                     inputFormater: GlobalConstant.inputFormaterEmailField,
-                     validator: (value) {
-                       if(value!.isNotEmpty && value!.isEmailValid){
-                         return "enter a valid email";
-                       }
-                     },
-                   ),
-                  const SizedBox(height: 20,),
-                  CustomFormField(
-                    hint: "telephone",
-                    inputFormater: GlobalConstant.inputFormaterPhoneField,
-                    validator: (value) {
-                      if(value!.isNotEmpty && value!.isTelephoneValid){
-                        return "enter a valid telephone";
-                      }
-                    },
-                  ),
+                child: SingleChildScrollView(
+                  child: Column(
+                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const SizedBox(height: 20,),
+                     CustomFormField(
+                       hint: "name",
+                       validator: (value) {
+                         if(value!.isNotEmpty && value!.isNameValid){
+                           return "enter a valid name";
+                         }
+                       },
+                       inputFormater: GlobalConstant.inputFormaterNameField,
+                     ),
+                     const SizedBox(height: 20,),
+                     CustomFormField(
+                       hint: "email",
+                       inputFormater: GlobalConstant.inputFormaterEmailField,
+                       validator: (value) {
+                         if(value!.isNotEmpty && value!.isEmailValid){
+                           return "enter a valid email";
+                         }
+                       },
+                     ),
                     const SizedBox(height: 20,),
                     CustomFormField(
-                      hint: "password",
+                      hint: "telephone",
+                      inputFormater: GlobalConstant.inputFormaterPhoneField,
                       validator: (value) {
-                        if(value!.isNotEmpty && value!.isPasswordValid){
-                          return "enter a valid password";
+                        if(value!.isNotEmpty && value!.isTelephoneValid){
+                          return "enter a valid telephone";
                         }
                       },
                     ),
-                  ],
+                      const SizedBox(height: 20,),
+                      CustomFormField(
+                        hint: "password",
+                        validator: (value) {
+                          if(value!.isNotEmpty && value!.isPasswordValid){
+                            return "enter a valid password";
+                          }
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
               CustomSignupButton(
