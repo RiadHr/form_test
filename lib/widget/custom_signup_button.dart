@@ -11,7 +11,7 @@ class CustomSignupButton extends StatelessWidget {
     return ElevatedButton(
         onPressed: buttonHandler(),
         style:  GlobalConstant.kbuttonSignupStyle,
-        child: Text(buttonContent),
+        child: Text(buttonContent,style: GlobalConstant.ktextSingupStyle,),
     );
   }
 }

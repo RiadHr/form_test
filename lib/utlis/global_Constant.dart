@@ -8,6 +8,10 @@ class GlobalConstant{
   static final inputFormaterPhoneField = [FilteringTextInputFormatter.allow(RegExp(r"[0-9]"))];
   static final inputFormaterEmailField = [FilteringTextInputFormatter.allow(RegExp(r"[a-zA-Z]+|\s"))];
 
+  static const ktextSingupStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 22,
+    fontWeight: FontWeight.w700,);
   static final kbuttonSignupStyle = ButtonStyle(
     shape: MaterialStateProperty.all(ContinuousRectangleBorder(borderRadius: BorderRadius.circular(10))),
       elevation: MaterialStateProperty.all(5),
