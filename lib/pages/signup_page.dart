@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:form/pages/singin_page.dart';
 import 'package:form/utlis/global_Constant.dart';
 import 'package:form/widget/custom_form_field.dart';
 import 'package:form/utlis/input_validators.dart';
 import 'package:form/widget/custom_signup_button.dart';
 
 class SignupPage extends StatefulWidget {
-  const SignupPage({super.key, required this.title});
-  final String title;
+  const SignupPage({super.key});
 
   @override
   State<SignupPage> createState() => _SignupPageState();
@@ -73,7 +73,8 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
               CustomSignupButton(
-                  buttonHandler:(){},
+                  buttonHandler:(){
+                  },
                   buttonContent: "SignUp"),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -83,7 +84,10 @@ class _SignupPageState extends State<SignupPage> {
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.transparent),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder:(context) => const SigninPage(),));
+                    },
                     child: const Text("SignIn",style: GlobalConstant.ktextSingupTextStyle,)
                 )
               ],)
