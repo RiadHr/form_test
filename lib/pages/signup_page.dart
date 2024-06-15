@@ -4,15 +4,15 @@ import 'package:form/widget/custom_form_field.dart';
 import 'package:form/utlis/input_validators.dart';
 import 'package:form/widget/custom_signup_button.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.title});
+class SignupPage extends StatefulWidget {
+  const SignupPage({super.key, required this.title});
   final String title;
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text("signUp ",),
+              const Text("SignUp ",style: GlobalConstant.ktextSingupHeaderStyle,),
               const SizedBox(height: 50,),
               Expanded(
                 child: SingleChildScrollView(
@@ -74,9 +74,19 @@ class _HomePageState extends State<HomePage> {
               ),
               CustomSignupButton(
                   buttonHandler:(){},
-                  buttonContent: "SignUp")
-
-
+                  buttonContent: "SignUp"),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                const Text("if you have an account you can "),
+                TextButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                    ),
+                    onPressed: () {},
+                    child: const Text("SignIn",style: GlobalConstant.ktextSingupTextStyle,)
+                )
+              ],)
           ],),
         ),
       ),
